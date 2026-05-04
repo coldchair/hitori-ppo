@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hitori_env", "ppo"]
+
+[tool.uv.workspace]
+members = [
+    "hitori-gym",
+]
+
+[project]
+name = "hitori-gym"
+version = "0.0.3"
+description = "A Gymnasium environment for the Hitori puzzle game."
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+  {name = "Vibhu Agarwal"}
+]
+keywords = ["gymnasium", "reinforcement-learning", "hitori", "puzzle", "game", "rl"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "gymnasium",
+  "pygame",
+]
+
+[project.urls]
+Homepage = "https://github.com/vibhuagarwal/hitori-gym"
+Repository = "https://github.com/vibhuagarwal/hitori-gym"
+
+[dependency-groups]
+dev = [
+    "twine>=6.2.0",
+]
